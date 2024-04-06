@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="users-wrapper">
+    <mat-card *ngFor="let user of users$ | async">
+      <mat-card-header>
+        <img mat-card-avatar [src]="user.avatar" alt="Avatar" />
+        <mat-card-title
+          >{{ user.firstName }} {{ user.lastName }}</mat-card-title
+        >
+        <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="user.avatar" alt="Avatar" />
+      <mat-card-actions>
+        <button
+          mat-stroked-button
+          color="primary"
+          [routerLink]="['/users/', user.id]"
+        >
+          Learn More
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <mat-paginator 
+    *ngIf="pagination$ | async as pagination"
+    [length]="pagination.total"
+    aria-label="Select page"
+    [pageSize]="pagination.perPage"
+    (page)="handlePageEvent($event)"
+
+  >
+  
+  </mat-paginator>
+</div>

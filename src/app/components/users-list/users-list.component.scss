@@ -1,0 +1,23 @@
+mat-card-header {
+    background-color: #673ab73d;
+  }
+
+mat-card{
+    display: flex;
+    flex-basis: 24%;
+}
+mat-card-actions{
+    margin: auto;
+}
+.users-wrapper {
+
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.container{
+   width: 80%;
+   margin: auto;
+}

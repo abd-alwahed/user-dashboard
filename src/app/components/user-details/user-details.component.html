@@ -1,0 +1,13 @@
+
+<mat-card *ngIf=" user$ | async as user">
+
+    <mat-card-header>
+      <img mat-card-avatar [src]="user?.avatar" alt="Photo of a {{ user.firstName }}" />
+      <mat-card-title>{{ user.firstName }} {{ user.lastName }}</mat-card-title>
+      <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="user.avatar" alt="Photo of a {{ user.firstName }}" />
+    <mat-card-actions>
+        <button mat-stroked-button color="warn" (click)="backToHome()">Back</button>
+    </mat-card-actions>
+  </mat-card>
